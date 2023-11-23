@@ -139,9 +139,13 @@ struct ContentView: View {
                 let currentValue = Int(self.value) ?? 0
                 switch self.currentOperation {
                 case .add: self.value = "\(runningValue + currentValue)"; self.runningNumber = 0
+                    UIAccessibility.post(notification: .announcement, argument: "Result: \(self.value)")
                 case .subtract: self.value = "\(runningValue - currentValue)"; self.runningNumber = 0
+                    UIAccessibility.post(notification: .announcement, argument: "Result: \(self.value)")
                 case .multiply: self.value = "\(runningValue * currentValue)"; self.runningNumber = 0
+                    UIAccessibility.post(notification: .announcement, argument: "Result: \(self.value)")
                 case .divide: self.value = "\(runningValue / currentValue)"; self.runningNumber = 0
+                    UIAccessibility.post(notification: .announcement, argument: "Result: \(self.value)")
                 case .none:
                     break
                 }
